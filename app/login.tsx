@@ -41,6 +41,8 @@ const Login = () => {
           value={email}
           keyboardType="email-address"
           onChangeText={setEmail}
+          autoCapitalize="none" 
+          autoComplete="email"
         />
         <Text style={styles.label}>Password</Text>
         <View style={styles.password_con}> 

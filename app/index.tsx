@@ -12,9 +12,23 @@ import { Image } from 'expo-image';
 import Header from '@/components/Header';
 import Checkbox from 'expo-checkbox';
 import { Link } from 'expo-router';
+import { useFonts } from 'expo-font';
+import Inputs from '@/components/Inputs';
+
+
+
 
 
 const index = () => {
+
+
+  const [fontsLoaded] = useFonts({
+    "poppins-Regular": require("../assets/fonts/Poppins/Poppins-LightItalic.ttf"),
+   "poppins-Semibold": require("../assets/fonts/Poppins/Poppins-SemiBold.ttf"),
+    "poppins-bold": require("../assets/fonts/Poppins/Poppins-Bold.ttf"),
+    // "libreBaskerville-Italic": require("../assets/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf"),
+  });
+
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
@@ -48,7 +62,7 @@ const index = () => {
         value={fullName}
         onChangeText={setFullName}
       />
-
+      <Inputs/>
       <Text style={styles.label}>Email</Text>
       <TextInput
         style={styles.input}
@@ -145,7 +159,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 5,
     fontWeight:'bold',
-    alignSelf: 'flex-start',  
+    alignSelf: 'flex-start', 
+    fontFamily:'poppins-Regular' 
   },
 
   button:{
@@ -201,10 +216,7 @@ width:'100%'
     marginTop:20,
     flexDirection:'row',
     justifyContent:'center'
-  }
-
-  
-  
+  } 
 });
 
 
