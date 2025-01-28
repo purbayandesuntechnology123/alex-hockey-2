@@ -8,11 +8,18 @@ type HeaderProps={
 const Header = ({text}:HeaderProps) => {
   return (
     <View>
-      <Text>{text}</Text>
+      <Text style={styles.headerStyle}>{text}</Text>
     </View>
   )
 }
 
 export default Header
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    headerStyle:{
+        color:'orange',
+        fontSize:24,
+        fontWeight:'bold',
+      
+    }
+})

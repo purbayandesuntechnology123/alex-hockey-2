@@ -11,16 +11,14 @@ import svgGoogle from '../assets/images/google_icon.svg'
 import { Image } from 'expo-image';
 import Header from '@/components/Header';
 import Checkbox from 'expo-checkbox';
+import { Link } from 'expo-router';
 
 
 const index = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [contactNumber, setContactNumber] = useState('');
-  const [password, setPassword] = useState('');
-
- 
-
+   const [password, setPassword] = useState('');
   const [isShowPassword, setShowPassword]= useState(false)
   const [isSelected, setIsSelected] = useState(false);
 
@@ -127,6 +125,7 @@ const index = () => {
 
         <Text style={{color:'black'}}>Already have an account? <Text style={{color:'orange', fontWeight:'bold'}}>Sign In</Text></Text>
      </View>
+     <Link href={"/login"}>About</Link>
     </View>
   
   );
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginVertical: 5,
     fontWeight:'bold',
-    alignSelf: 'flex-start',  // Align labels to the left
+    alignSelf: 'flex-start',  
   },
 
   button:{
